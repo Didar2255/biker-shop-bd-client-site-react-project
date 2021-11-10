@@ -31,10 +31,10 @@ const Dashboard = () => {
                                 <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Reviews</li>
                             </Link>
                             <Link to={`${url}/pay`}>
-                                <li className='dashboard-menu'> <i class="fab fa-amazon-pay"></i> Pay</li>
+                                <li className='dashboard-menu'> <i class="fab fa-amazon-pay icon"></i> Pay</li>
                             </Link>
                             <Link to={`${url}/manageOrder`}>
-                                <li className='dashboard-menu'> <i class="fas fa-tasks"></i> Manage All order</li>
+                                <li className='dashboard-menu'> <i class="fas fa-tasks icon"></i> Manage All order</li>
                             </Link>
                             <Link to={`${url}/addProduct`}>
                                 <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Product</li>
