@@ -1,0 +1,30 @@
+.register-form{
+    border: 1px solid black;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(151, 183, 192);
+}
+.register-form h2{
+    color: rgba(233, 34, 34, 0.85);
+}
+.register-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.register-form form input{
+    margin: 10px;
+    width: 60%;
+    border-radius: 25px;
+    padding: 6px 14px;
+}
+.register-img img{
+    width: 500px;
+}
+.register-form a{
+    font-size: 18px;
+    font-weight: 500;
+    color:firebrick ;
+}
