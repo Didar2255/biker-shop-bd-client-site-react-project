@@ -1,0 +1,45 @@
+.footer-section{
+    background-color: rgb(21,19,32);
+    color: white;
+    padding: 30px;
+}
+hr{
+    padding: 2px;
+    color: rgb(228, 7, 7);
+    margin: 60px;
+}
+.icon{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.footer-content{
+    text-align: justify;
+}
+.footer-content ul li{
+    list-style: none;
+    text-align: justify;
+    line-height: 30px;
+}
+.footer-content ul li:hover{
+    margin-left: 8px;
+    color: tomato;
+    transition: margin-left 0.2s ease-in-out;
+}
+.footer-copy{
+    background-color:rgb(14,12,21) ;
+    height: 40px;
+    color: white;
+    padding: 10px;
+}
+.social-media i{
+    font-size: 40px;
+    margin: 8px;
+    color: tomato; 
+}
+.social-media i:hover{
+    transform: scale(1.10);
+}
+.logo {
+    height: 150px;
+    width: 200px;
+}
