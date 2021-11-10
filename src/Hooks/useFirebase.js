@@ -15,6 +15,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user)
+
             })
             .then(error => {
                 setError(error?.message)
@@ -29,6 +30,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user)
+
             })
             .then(error => {
                 setError(error?.message)

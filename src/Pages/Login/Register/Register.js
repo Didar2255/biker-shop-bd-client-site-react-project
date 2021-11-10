@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Spinner } from 'react-bootstrap';
+import { Alert, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import registerImg from '../../../Images/LogIn/Image2.jpg'
@@ -56,6 +56,9 @@ const Register = () => {
                                     <input type="submit" value='Create Account' />
                                 </form>}
                                 {isLoading && <Spinner animation="border" variant="danger" />}
+                                {user?.email && <Alert variant='success'>
+                                    User Successfully register
+                                </Alert>}
                                 <p>All ready have an Account ? <Link to='/login'>Log in </Link></p>
                             </div>
                         </div>
