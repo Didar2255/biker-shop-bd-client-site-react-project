@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import image1 from '../../../Images/LogIn/image1.jpg'
 import "./Login.css"
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Alert, Container, Spinner } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const [login, setLogin] = useState({})
+    const location = useLocation()
+    const history = useHistory()
     const { handelLoginProcess, isLoading, user } = useAuth()
 
     const handelOnchange = (e) => {
@@ -18,7 +20,7 @@ const Login = () => {
     }
 
     const handelFormSubmit = (e) => {
-        handelLoginProcess(login.email, login.password)
+        handelLoginProcess(login.email, login.password, location, history)
         e.preventDefault()
     }
 

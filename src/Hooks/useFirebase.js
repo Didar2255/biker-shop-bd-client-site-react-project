@@ -10,12 +10,13 @@ const useFirebase = () => {
 
     const auth = getAuth()
 
-    const handelCreateAccount = (email, password) => {
+    const handelCreateAccount = (email, password, history, location) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const redirect_uri = location?.state?.from || '/home'
+                history.push(redirect_uri)
                 setUser(result.user)
-
             })
             .then(error => {
                 setError(error?.message)
@@ -25,10 +26,12 @@ const useFirebase = () => {
             })
     }
 
-    const handelLoginProcess = (email, password) => {
+    const handelLoginProcess = (email, password, history, location) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const redirect_uri = location?.state?.from || '/home'
+                history.push(redirect_uri)
                 setUser(result.user)
 
             })

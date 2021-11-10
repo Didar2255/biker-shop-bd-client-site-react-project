@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Alert, Container, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import registerImg from '../../../Images/LogIn/Image2.jpg'
 import './Register.css'
 
 const Register = () => {
     const [registerData, setRegisterData] = useState({})
+    const location = useLocation()
+    const history = useHistory()
 
     const { user, handelCreateAccount, isLoading } = useFirebase()
 
@@ -18,7 +20,7 @@ const Register = () => {
         setRegisterData(newRegisterData)
     }
     const handelRegisterForm = (e) => {
-        handelCreateAccount(registerData.email, registerData.password)
+        handelCreateAccount(registerData.email, registerData.password, location, history)
         e.preventDefault()
     }
     return (

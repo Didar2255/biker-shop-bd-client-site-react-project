@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
+import PrivetRoute from './PrivetRoute/PrivetRoute/PrivetRoute';
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
-            <Route path='/allProducts'>
+            <PrivetRoute path='/allProducts'>
               <AllProducts></AllProducts>
-            </Route>
+            </PrivetRoute>
             <Route path='/dashboard'>
               <Dashboard></Dashboard>
             </Route>
