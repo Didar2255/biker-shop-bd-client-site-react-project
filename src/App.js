@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+import AuthProvider from './context/AuthProvider/AuthProvider';
 import About from './Pages/About/About/About';
 import AllProducts from './Pages/AllProduct/AllProducts/AllProducts';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
@@ -12,34 +13,36 @@ import NotFound from './Pages/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/allProducts'>
-            <AllProducts></AllProducts>
-          </Route>
-          <Route path='/dashboard'>
-            <Dashboard></Dashboard>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <Route path='/register'>
-            <Register></Register>
-          </Route>
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/allProducts'>
+              <AllProducts></AllProducts>
+            </Route>
+            <Route path='/dashboard'>
+              <Dashboard></Dashboard>
+            </Route>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

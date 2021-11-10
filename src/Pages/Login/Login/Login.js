@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import image1 from '../../../Images/LogIn/image1.jpg'
 import "./Login.css"
 import { Link } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { Container, Spinner } from 'react-bootstrap';
+import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const [login, setLogin] = useState({})
+    const { handelLoginProcess, isLoading } = useAuth()
 
     const handelOnchange = (e) => {
         const field = e.target.name;
@@ -16,6 +18,7 @@ const Login = () => {
     }
 
     const handelFormSubmit = (e) => {
+        handelLoginProcess(login.email, login.password)
         e.preventDefault()
     }
 
@@ -32,7 +35,7 @@ const Login = () => {
                         <div className="col-md-6">
                             <div className="login-form">
                                 <h2>Please Log-In</h2>
-                                <form onSubmit={handelFormSubmit}>
+                                {!isLoading && <form onSubmit={handelFormSubmit}>
                                     <input
                                         type='email'
                                         name='email'
@@ -46,7 +49,8 @@ const Login = () => {
                                         placeholder='User Password *'
                                     />
                                     <input type="submit" value='Log in' />
-                                </form>
+                                </form>}
+                                {isLoading && <Spinner animation="border" variant="danger" />}
                                 <p>New user ? <Link to='/register'>Register Here</Link></p>
                                 _________________ or ________________
                                 <br />
