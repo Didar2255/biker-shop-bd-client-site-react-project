@@ -23,29 +23,29 @@ const Dashboard = () => {
                 <div className='col-md-3 col-12'>
                     <div className="dashboard-area">
                         <div className="dashboard">
-                            <h4>Dashboard</h4>
+                            <h2>Dashboard</h2>
                             <Link to={`${url}`}>
-                                <li className='dashboard-menu'>My Orders</li>
+                                <li className='dashboard-menu'> <i class="fas fa-list icon"></i> My Orders</li>
                             </Link>
                             <Link to={`${url}/addReviews`}>
-                                <li className='dashboard-menu'>Add Reviews</li>
+                                <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Reviews</li>
                             </Link>
                             <Link to={`${url}/pay`}>
-                                <li className='dashboard-menu'>Pay</li>
+                                <li className='dashboard-menu'> <i class="fab fa-amazon-pay"></i> Pay</li>
                             </Link>
                             <Link to={`${url}/manageOrder`}>
-                                <li className='dashboard-menu'>Manage All order</li>
+                                <li className='dashboard-menu'> <i class="fas fa-tasks"></i> Manage All order</li>
                             </Link>
                             <Link to={`${url}/addProduct`}>
-                                <li className='dashboard-menu'>Add Product</li>
+                                <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Product</li>
                             </Link>
                             <Link to={`${url}/manageProduct`}>
-                                <li className='dashboard-menu'>Manage Product</li>
+                                <li className='dashboard-menu'> <i class="fas fa-th-large icon"></i> Manage Product</li>
                             </Link>
                             <Link to={`${url}/makeAdmin`}>
-                                <li className='dashboard-menu'>Make Admin</li>
+                                <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
                             </Link>
-                            <li className='dashboard'><Button variant='danger'>Log-Out</Button></li>
+                            <li className='dashboard'><Button variant='danger' className='my-4'>Log-Out</Button></li>
                         </div>
 
                     </div>
