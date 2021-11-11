@@ -4,16 +4,18 @@ import { Button, Card, Col } from 'react-bootstrap';
 const SingleOrder = ({ order }) => {
     const { productName, productImg, productPrice, _id, status } = order;
     const handelDeleteOrder = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Are you sure to delete the order ?')
-                }
+        const proceed = window.confirm('Are you sure to delete the order ')
+        if (proceed) {
+            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+                method: 'DELETE'
             })
-
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        alert('Delete Success full ?')
+                    }
+                })
+        }
     }
     return (
         <Col>
