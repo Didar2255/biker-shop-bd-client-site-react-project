@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SingleProducts = (props) => {
     const { productName, description, image, price, _id } = props.product
+    const url = `/product/${_id}`
     return (
         <div>
             <Col>
@@ -14,7 +16,9 @@ const SingleProducts = (props) => {
                             {description.slice(0, 180)}
                             <h5>Price : $ {price}</h5>
                         </Card.Text>
-                        <Button variant='primary'>Buy now</Button>
+                        <Link to={url}>
+                            <Button variant='primary' >Buy now</Button>
+                        </Link>
                     </Card.Body>
                 </Card>
             </Col>
