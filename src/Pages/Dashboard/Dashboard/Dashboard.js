@@ -7,6 +7,7 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
+import PrivetRoute from '../../../PrivetRoute/PrivetRoute/PrivetRoute';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -63,15 +64,15 @@ const Dashboard = () => {
                         <Route path={`${path}/pay`}>
                             <Pay></Pay>
                         </Route>
-                        <Route path={`${path}/manageOrder`}>
+                        <PrivetRoute path={`${path}/manageOrder`}>
                             <ManageOrder></ManageOrder>
-                        </Route>
-                        <Route path={`${path}/addProduct`}>
+                        </PrivetRoute>
+                        <PrivetRoute path={`${path}/addProduct`}>
                             <AddProduct></AddProduct>
-                        </Route>
-                        <Route path={`${path}/manageProduct`}>
+                        </PrivetRoute>
+                        <PrivetRoute path={`${path}/manageProduct`}>
                             <ManageProduct></ManageProduct>
-                        </Route>
+                        </PrivetRoute>
                         <Route path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
                         </Route>
