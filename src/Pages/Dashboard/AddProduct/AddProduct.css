@@ -1,0 +1,18 @@
+.addProduct-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.addProduct-form form input{
+    width: 50%;
+    margin: 10px;
+    padding: 5px 10px;
+}
+.addProduct-form h2{
+    font-size: 30px;
+    margin: 20px;
+    color: limegreen;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -50,7 +50,7 @@ const Dashboard = () => {
 
                     </div>
                 </div>
-                <div className="col-md-3 col-12">
+                <div className="col-md-9 col-12">
                     <Switch>
                         <Route exact path={path}>
                             <MyOrder></MyOrder>
