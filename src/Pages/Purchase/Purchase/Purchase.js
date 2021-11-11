@@ -9,16 +9,34 @@ const Purchase = () => {
     const { user } = useAuth()
     const { id } = useParams()
     const [product, setProduct] = useState({})
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+
     useEffect(() => {
         const url = `http://localhost:5000/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [id])
+    }, [id]);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        data.status = 'pending'
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Product Successfully Ordered')
+                    reset()
+                }
+            })
+    };
     return (
-        <div className='my-5'>
+        <div className='Order-section'>
             <Container>
                 <div className="row">
                     <div className="col-md-5">
@@ -48,6 +66,9 @@ const Purchase = () => {
                                 />
                                 <input {...register("productPrice")}
                                     defaultValue={product?.price}
+                                />
+                                <input {...register("productImg")}
+                                    defaultValue={product?.image}
                                 />
                                 <input {...register("date")}
                                     type='date'

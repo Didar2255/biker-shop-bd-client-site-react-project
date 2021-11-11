@@ -6,6 +6,7 @@ import {
     Link,
     useRouteMatch
 } from "react-router-dom";
+import useAuth from '../../../Hooks/useAuth';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -16,6 +17,7 @@ import Pay from '../Pay/Pay';
 import './Dashboard.css'
 
 const Dashboard = () => {
+    const { handelLogOut } = useAuth()
     let { path, url } = useRouteMatch();
     return (
         <div className="dashboard-container">
@@ -45,7 +47,7 @@ const Dashboard = () => {
                             <Link to={`${url}/makeAdmin`}>
                                 <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
                             </Link>
-                            <li className='dashboard'><Button variant='danger' className='my-4'>Log-Out</Button></li>
+                            <li className='dashboard'><Button variant='danger' className='my-4' onClick={handelLogOut}>Log-Out</Button></li>
                         </div>
 
                     </div>

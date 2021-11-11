@@ -24,12 +24,12 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
-            <PrivetRoute path='/allProducts'>
+            <Route path='/allProducts'>
               <AllProducts></AllProducts>
-            </PrivetRoute>
-            <Route path='/product/:id'>
-              <Purchase></Purchase>
             </Route>
+            <PrivetRoute path='/product/:id'>
+              <Purchase></Purchase>
+            </PrivetRoute>
             <Route path='/dashboard'>
               <Dashboard></Dashboard>
             </Route>

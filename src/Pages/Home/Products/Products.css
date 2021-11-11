@@ -5,3 +5,6 @@
     font-weight: 600;
     color: rgb(40, 44, 44);
 }
+.display-product h2:hover{
+    color: tomato;
+}

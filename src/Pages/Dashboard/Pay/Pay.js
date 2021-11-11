@@ -2,8 +2,8 @@ import React from 'react';
 
 const Pay = () => {
     return (
-        <div>
-            <h2>Payment Coming Soon </h2>
+        <div className='my-5'>
+            <h2>Payment Coming Soon...</h2>
         </div>
     );
 };

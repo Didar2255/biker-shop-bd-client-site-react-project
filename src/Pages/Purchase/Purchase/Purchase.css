@@ -1,3 +1,7 @@
+.Order-section{
+    background-color: rgba(243, 228, 215, 0.775);
+    padding: 30px;
+}
 .order-card{
     background-color: rgb(14, 35, 36);
     text-align: justify;
