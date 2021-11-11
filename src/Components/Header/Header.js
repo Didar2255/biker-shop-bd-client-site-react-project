@@ -23,11 +23,12 @@ const Header = () => {
                     <NavLink to='/about'>
                         About us
                     </NavLink>
-                    {!user?.email ? <NavLink to='/login'>
-                        Log-In
-                    </NavLink>
+                    {user.email && <span className='display-name'>{user.displayName}</span>}
+                    {user?.email ? <Button variant='danger' onClick={handelLogOut}>Log-Out</Button>
                         :
-                        <Button variant='danger' onClick={handelLogOut}>Log-Out</Button>
+                        <NavLink to='/login'>
+                            Log-In
+                        </NavLink>
                     }
                 </Nav>
             </Container>

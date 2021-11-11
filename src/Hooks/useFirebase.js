@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
 
@@ -10,13 +10,20 @@ const useFirebase = () => {
 
     const auth = getAuth()
 
-    const handelCreateAccount = (email, password, history, location) => {
+    const handelCreateAccount = (email, password, name, location, history) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const redirect_uri = location?.state?.from || '/home'
-                history.push(redirect_uri)
-                setUser(result.user)
+                const destination = location?.state?.from || '/home'
+                history.replace(destination)
+                const newUser = { email, displayName: name }
+                setUser(newUser)
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                })
+                    .then(() => {
+
+                    })
             })
             .then(error => {
                 setError(error?.message)
@@ -30,11 +37,10 @@ const useFirebase = () => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const redirect_uri = location?.state?.from || '/home'
-                history.push(redirect_uri)
-                setUser(result.user)
-
+                const destination = location.state?.from || '/home'
+                history.replace(destination)
             })
+
             .then(error => {
                 setError(error?.message)
             })
