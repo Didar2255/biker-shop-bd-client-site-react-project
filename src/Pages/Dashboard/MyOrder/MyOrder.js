@@ -6,6 +6,7 @@ import SingleOrder from '../SingleOrder/SingleOrder';
 const MyOrder = () => {
     const [orders, setOrders] = useState([])
     const { user } = useAuth()
+
     useEffect(() => {
         fetch(`http://localhost:5000/allOrder?email=${user?.email}`)
             .then(res => res.json())
