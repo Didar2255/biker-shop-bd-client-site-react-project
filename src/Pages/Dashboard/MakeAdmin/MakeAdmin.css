@@ -1,0 +1,10 @@
+.admin-form form {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.admin-form form input{
+    padding: 5px 10px;
+    margin: 10px;
+    width: 40%;
+}
