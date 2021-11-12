@@ -1,0 +1,12 @@
+.update-status form select{
+    width: 25%;
+}
+.update-status h2{
+    margin: 20px;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(174, 62, 21);
+}
+.update-status{
+    margin:20px ;
+}

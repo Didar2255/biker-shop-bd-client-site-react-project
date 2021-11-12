@@ -11,7 +11,7 @@ const MyOrder = () => {
         fetch(`http://localhost:5000/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [user])
     return (
         <div className='my-4'>
             <h2>This is my Order</h2>

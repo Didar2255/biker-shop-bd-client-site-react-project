@@ -5,6 +5,7 @@ import AuthProvider from './context/AuthProvider/AuthProvider';
 import About from './Pages/About/About/About';
 import AllProducts from './Pages/AllProduct/AllProducts/AllProducts';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import StatusUpdate from './Pages/Dashboard/StatusUpdate/StatusUpdate';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <PrivetRoute path='/product/:id'>
               <Purchase></Purchase>
+            </PrivetRoute>
+            <PrivetRoute path='/updateStatus/:id'>
+              <StatusUpdate></StatusUpdate>
             </PrivetRoute>
             <Route path='/dashboard'>
               <Dashboard></Dashboard>
