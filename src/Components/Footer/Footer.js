@@ -9,15 +9,15 @@ const Footer = () => {
             <div className="footer-section">
                 <div className="row my-4">
                     <div className="col-md-4">
-                        <h1> <i class="fas fa-shipping-fast"></i> Free Shipping</h1>
+                        <h1> <i className="fas fa-shipping-fast"></i> Free Shipping</h1>
                         <h6>Bike Shipping From Indonesia</h6>
                     </div>
                     <div className="col-md-4">
-                        <h1> <i class="fas fa-shield-virus"></i> One Year Service</h1>
+                        <h1> <i className="fas fa-shield-virus"></i> One Year Service</h1>
                         <h6>Service Guarantee After bye Motor bike</h6>
                     </div>
                     <div className="col-md-4">
-                        <h1> <i class="fas fa-phone-alt"></i> Online Support</h1>
+                        <h1> <i className="fas fa-phone-alt"></i> Online Support</h1>
                         <h6>24 Online Support from Our Showroom</h6>
                     </div>
                 </div>
@@ -28,8 +28,8 @@ const Footer = () => {
                             In order to continue to be a company society wants to exist,
                             Biker Shop BD aims to become the  “power” that supports people around the world who are trying to do things based on their own initiative.
                         </p>
-                        <p> <i class="fas fa-house-user icon"></i>Address : Banani,Model Town,Dhaka</p>
-                        <p> <i class="fas fa-phone-square-alt icon"></i>Phone : +1236459</p>
+                        <p> <i className="fas fa-house-user icon"></i>Address : Banani,Model Town,Dhaka</p>
+                        <p> <i className="fas fa-phone-square-alt icon"></i>Phone : +1236459</p>
                     </div>
                     <div className="col-md-2 footer-content">
                         <h2 className='ms-4'>Services</h2>
@@ -55,11 +55,11 @@ const Footer = () => {
                     <div className="col-md-3">
                         <h2>Contact Us</h2>
                         <div className="social-media">
-                            <i class="fab fa-facebook-square"></i>
-                            <i class="fab fa-instagram-square"></i>
-                            <i class="fab fa-linkedin"></i>
-                            <i class="fab fa-twitter-square"></i>
-                            <i class="fab fa-whatsapp-square"></i>
+                            <i className="fab fa-facebook-square"></i>
+                            <i className="fab fa-instagram-square"></i>
+                            <i className="fab fa-linkedin"></i>
+                            <i className="fab fa-twitter-square"></i>
+                            <i className="fab fa-whatsapp-square"></i>
                         </div>
                         <img src={logo} alt="" className='img-fluid logo' />
 

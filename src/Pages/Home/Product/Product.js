@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ product }) => {
-    const { productName, image, description, _id, color, price } = product
+    const { productName, image, description, _id } = product
     const url = `/product/${_id}`
     return (
         <Col>

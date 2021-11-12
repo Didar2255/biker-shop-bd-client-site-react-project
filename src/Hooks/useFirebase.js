@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
 
@@ -9,29 +9,28 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const auth = getAuth()
-
-    const handelCreateAccount = (email, password, name, location, history) => {
+    const GoogleProvider = new GoogleAuthProvider()
+    const handelCreateAccount = (email, password, name) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const destination = location?.state?.from || '/home'
-                history.replace(destination)
                 const newUser = { email, displayName: name }
                 setUser(newUser)
+                // save user To the database
+                saveUser(email, name)
+
                 updateProfile(auth.currentUser, {
                     displayName: name
                 })
-                    .then(() => {
-
-                    })
+                    .then(() => { })
             })
-            .then(error => {
+            .catch(error => {
                 setError(error?.message)
             })
             .finally(() => {
                 setIsLoading(false)
-            })
-    }
+            });
+    };
 
     const handelLoginProcess = (email, password, history, location) => {
         setIsLoading(true)
@@ -41,13 +40,13 @@ const useFirebase = () => {
                 history.replace(destination)
             })
 
-            .then(error => {
+            .catch(error => {
                 setError(error?.message)
             })
             .finally(() => {
                 setIsLoading(false)
-            })
-    }
+            });
+    };
 
     useEffect(() => {
         setIsLoading(true)
@@ -63,20 +62,47 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
-    const handelLogOut = () => {
+    const handelGoogleLogIn = (history, location) => {
         setIsLoading(true)
-        signOut(auth)
-            .then(() => {
-                setUser({})
+        signInWithPopup(auth, GoogleProvider)
+            .then(result => {
+                const destination = location.state?.from || '/home'
+                history.replace(destination)
+                setUser(result.user)
             })
-            .then(error => {
-                setError(error?.message)
+            .catch(error => {
+                setError(error.message)
             })
             .finally(() => {
                 setIsLoading(false)
             })
     }
 
-    return { handelCreateAccount, handelLoginProcess, handelLogOut, user, error, isLoading }
+    const handelLogOut = () => {
+        setIsLoading(true)
+        signOut(auth)
+            .then(() => {
+                setUser({})
+            })
+            .catch(error => {
+                setError(error?.message)
+            })
+            .finally(() => {
+                setIsLoading(false)
+            });
+    }
+
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+    }
+
+    return { handelCreateAccount, handelLoginProcess, handelGoogleLogIn, handelLogOut, user, error, isLoading }
 }
 export default useFirebase;

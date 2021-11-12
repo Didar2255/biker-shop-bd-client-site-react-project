@@ -7,7 +7,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
     const [login, setLogin] = useState({})
-    const { handelLoginProcess, isLoading, user } = useAuth()
+    const { handelLoginProcess, handelGoogleLogIn, isLoading, user } = useAuth()
 
     const location = useLocation()
     const history = useHistory()
@@ -23,6 +23,10 @@ const Login = () => {
     const handelFormSubmit = (e) => {
         handelLoginProcess(login.email, login.password, history, location)
         e.preventDefault()
+    }
+
+    const googleLogIn = () => {
+        handelGoogleLogIn(history, location)
     }
 
     return (
@@ -60,7 +64,7 @@ const Login = () => {
                                 <p>New user ? <Link to='/register'>Register Here</Link></p>
                                 _________________ or ________________
                                 <br />
-                                <button className="login-btn "> Sign With Google</button>
+                                <button className="login-btn " onClick={googleLogIn}> Sign With Google</button>
                             </div>
                         </div>
                     </div>
