@@ -3,7 +3,7 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SingleProducts = (props) => {
-    const { productName, description, image, price, _id } = props.product
+    const { productName, description, image, price, _id, color } = props.product
     const url = `/product/${_id}`
     return (
         <div>
@@ -14,7 +14,9 @@ const SingleProducts = (props) => {
                         <Card.Title>{productName}</Card.Title>
                         <Card.Text >
                             {description.slice(0, 180)}
+                            <h4>Color : {color}</h4>
                             <h5>Price : $ {price}</h5>
+
                         </Card.Text>
                         <Link to={url}>
                             <Button variant='primary' >Buy now</Button>

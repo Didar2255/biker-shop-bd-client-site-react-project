@@ -47,6 +47,8 @@ const Purchase = () => {
                                 <Card.Title>{product?.productName}</Card.Title>
                                 <Card.Text>
                                     {product?.description}
+                                    <h5>Color : {product?.color}</h5>
+                                    <h6>Price : {product?.price}</h6>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -63,6 +65,9 @@ const Purchase = () => {
                                 />
                                 <input {...register("productName")}
                                     defaultValue={product?.productName}
+                                />
+                                <input {...register("productColor")}
+                                    defaultValue={product?.color}
                                 />
                                 <input {...register("productPrice")}
                                     defaultValue={product?.price}

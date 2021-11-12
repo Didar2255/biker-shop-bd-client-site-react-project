@@ -8,15 +8,15 @@ const MyOrder = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allOrder?email=${user?.email}`)
+        fetch(`http://localhost:5000/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [user])
+    }, [])
     return (
         <div className='my-4'>
             <h2>This is my Order</h2>
             <Container>
-                <Row xs={1} md={4} className="g-4">
+                <Row xs={1} md={3} className="g-4">
                     {
                         orders.map(order => <SingleOrder
                             key={order._id}

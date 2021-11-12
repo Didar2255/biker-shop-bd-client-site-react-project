@@ -9,6 +9,10 @@
     margin: 10px;
     padding: 5px 10px;
 }
+.addProduct-form form select{
+    width: 50%;
+    padding: 5px 10px;
+}
 .addProduct-form h2{
     font-size: 30px;
     margin: 20px;
