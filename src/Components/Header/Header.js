@@ -28,9 +28,9 @@ const Header = () => {
                     <NavLink to='/allProducts'>
                         Explore All Products
                     </NavLink>
-                    {user.email && <NavLink to='/dashboard'>
+                    <NavLink to='/dashboard'>
                         Dashboard
-                    </NavLink>}
+                    </NavLink>
                     <NavLink to='/about'>
                         About us
                     </NavLink>

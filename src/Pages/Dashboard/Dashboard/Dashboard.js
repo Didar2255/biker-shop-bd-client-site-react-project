@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../../PrivetRoute/AdminRoute/AdminRoute';
+import PrivetRoute from '../../../PrivetRoute/PrivetRoute/PrivetRoute';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -67,9 +68,9 @@ const Dashboard = () => {
                         <Route path={`${path}/myOrder`}>
                             <MyOrder></MyOrder>
                         </Route>
-                        <Route path={`${path}/addReviews`}>
+                        <PrivetRoute path={`${path}/addReviews`}>
                             <AddReview></AddReview>
-                        </Route>
+                        </PrivetRoute>
                         <Route path={`${path}/pay`}>
                             <Pay></Pay>
                         </Route>
