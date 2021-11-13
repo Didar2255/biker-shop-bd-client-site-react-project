@@ -29,7 +29,7 @@ const Dashboard = () => {
                         <div className="dashboard">
                             <h2>Dashboard</h2>
                             {!admin ? <div>
-                                <Link to={`${url}`}>
+                                <Link to={`${url}/myOrder`}>
                                     <li className='dashboard-menu'> <i class="fas fa-list icon"></i> My Orders</li>
                                 </Link>
                                 <Link to={`${url}/addReviews`}>
@@ -64,7 +64,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9 col-12">
                     <Switch>
-                        <Route exact path={path}>
+                        <Route path={`${path}/myOrder`}>
                             <MyOrder></MyOrder>
                         </Route>
                         <Route path={`${path}/addReviews`}>
