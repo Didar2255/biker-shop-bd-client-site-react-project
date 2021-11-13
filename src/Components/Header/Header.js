@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
+import logo from '../../Images/Logo/bike logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -9,7 +10,17 @@ const Header = () => {
     return (
         <Navbar bg="dark" variant="dark" collapseOnSelect expand="lg">
             <Container>
-                <Navbar.Brand href="/home">Biker Shop BD</Navbar.Brand>
+                <Navbar.Brand href="/home">
+                    <div className="d-flex align-items-center">
+                        <img
+                            src={logo}
+                            width='100px'
+                            height='50px'
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                        <span className='site-name'> Biker Shop BD</span></div>
+                </Navbar.Brand>
                 <Nav className="ms-auto menu-bar">
                     <NavLink to='/home'>
                         Home
