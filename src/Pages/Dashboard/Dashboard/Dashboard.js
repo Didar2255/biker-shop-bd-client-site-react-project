@@ -7,6 +7,7 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
+import AdminRoute from '../../../PrivetRoute/AdminRoute/AdminRoute';
 import PrivetRoute from '../../../PrivetRoute/PrivetRoute/PrivetRoute';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
@@ -20,6 +21,7 @@ import './Dashboard.css'
 const Dashboard = () => {
     const { handelLogOut } = useAuth()
     let { path, url } = useRouteMatch();
+    const { admin } = useAuth()
     return (
         <div className="dashboard-container">
             <div className='row'>
@@ -27,27 +29,32 @@ const Dashboard = () => {
                     <div className="dashboard-area">
                         <div className="dashboard">
                             <h2>Dashboard</h2>
-                            <Link to={`${url}`}>
-                                <li className='dashboard-menu'> <i class="fas fa-list icon"></i> My Orders</li>
-                            </Link>
-                            <Link to={`${url}/addReviews`}>
-                                <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Reviews</li>
-                            </Link>
-                            <Link to={`${url}/pay`}>
-                                <li className='dashboard-menu'> <i class="fab fa-amazon-pay icon"></i> Pay</li>
-                            </Link>
-                            <Link to={`${url}/manageOrder`}>
-                                <li className='dashboard-menu'> <i class="fas fa-tasks icon"></i> Manage All order</li>
-                            </Link>
-                            <Link to={`${url}/addProduct`}>
-                                <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Product</li>
-                            </Link>
-                            <Link to={`${url}/manageProduct`}>
-                                <li className='dashboard-menu'> <i class="fas fa-th-large icon"></i> Manage Product</li>
-                            </Link>
-                            <Link to={`${url}/makeAdmin`}>
-                                <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
-                            </Link>
+                            {!admin ? <div>
+                                <Link to={`${url}`}>
+                                    <li className='dashboard-menu'> <i class="fas fa-list icon"></i> My Orders</li>
+                                </Link>
+                                <Link to={`${url}/addReviews`}>
+                                    <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Reviews</li>
+                                </Link>
+                                <Link to={`${url}/pay`}>
+                                    <li className='dashboard-menu'> <i class="fab fa-amazon-pay icon"></i> Pay</li>
+                                </Link>
+                            </div>
+                                :
+                                <div>
+                                    <Link to={`${url}/manageOrder`}>
+                                        <li className='dashboard-menu'> <i class="fas fa-tasks icon"></i> Manage All order</li>
+                                    </Link>
+                                    <Link to={`${url}/addProduct`}>
+                                        <li className='dashboard-menu'><i class="fas fa-plus icon"></i>Add Product</li>
+                                    </Link>
+                                    <Link to={`${url}/manageProduct`}>
+                                        <li className='dashboard-menu'> <i class="fas fa-th-large icon"></i> Manage Product</li>
+                                    </Link>
+                                    <Link to={`${url}/makeAdmin`}>
+                                        <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
+                                    </Link>
+                                </div>}
                             <li className='dashboard'><Button variant='danger' className='my-4' onClick={handelLogOut}>Log-Out</Button></li>
                         </div>
 
@@ -55,7 +62,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9 col-12">
                     <Switch>
-                        <Route exact path={path}>
+                        <Route path={path}>
                             <MyOrder></MyOrder>
                         </Route>
                         <Route path={`${path}/addReviews`}>
@@ -64,18 +71,18 @@ const Dashboard = () => {
                         <Route path={`${path}/pay`}>
                             <Pay></Pay>
                         </Route>
-                        <PrivetRoute path={`${path}/manageOrder`}>
+                        <AdminRoute path={`${path}/manageOrder`}>
                             <ManageOrder></ManageOrder>
-                        </PrivetRoute>
-                        <PrivetRoute path={`${path}/addProduct`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addProduct`}>
                             <AddProduct></AddProduct>
-                        </PrivetRoute>
-                        <PrivetRoute path={`${path}/manageProduct`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageProduct`}>
                             <ManageProduct></ManageProduct>
-                        </PrivetRoute>
-                        <Route path={`${path}/makeAdmin`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
 
                 </div>

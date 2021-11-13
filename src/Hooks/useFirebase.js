@@ -7,6 +7,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)
+    const [admin, setAdmin] = useState(false)
 
     const auth = getAuth()
     const GoogleProvider = new GoogleAuthProvider()
@@ -62,6 +63,12 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
     const handelGoogleLogIn = (history, location) => {
         setIsLoading(true)
         signInWithPopup(auth, GoogleProvider)
@@ -105,6 +112,6 @@ const useFirebase = () => {
         })
     }
 
-    return { handelCreateAccount, handelLoginProcess, handelGoogleLogIn, handelLogOut, user, error, isLoading }
+    return { handelCreateAccount, handelLoginProcess, handelGoogleLogIn, handelLogOut, user, admin, error, isLoading }
 }
 export default useFirebase;
