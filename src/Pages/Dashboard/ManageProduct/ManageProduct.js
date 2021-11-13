@@ -5,14 +5,14 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([])
     const [isDeleteProduct, setIsDeleteProduct] = useState(null)
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://radiant-savannah-23694.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [isDeleteProduct]);
     const handelDeleteProduct = (id) => {
         const proceed = window.confirm('Are sure want to delete the product')
         if (proceed) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://radiant-savannah-23694.herokuapp.com/deleteProduct/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

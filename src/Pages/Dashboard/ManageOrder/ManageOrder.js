@@ -7,12 +7,12 @@ const ManageOrder = () => {
     const [orders, setOrders] = useState([])
     const [isDelete, setIsDelete] = useState(null)
     useEffect(() => {
-        fetch('http://localhost:5000/allOrder')
+        fetch('https://radiant-savannah-23694.herokuapp.com/allOrder')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [isDelete]);
     const handelDeleteOrder = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+        fetch(`https://radiant-savannah-23694.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

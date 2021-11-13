@@ -5,7 +5,7 @@ import './AddProduct.css'
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://radiant-savannah-23694.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

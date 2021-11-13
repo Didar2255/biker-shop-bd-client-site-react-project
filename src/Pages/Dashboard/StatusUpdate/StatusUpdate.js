@@ -8,13 +8,13 @@ const StatusUpdate = () => {
 
     const [status, setStatus] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/updateStatus/${id}`)
+        fetch(`https://radiant-savannah-23694.herokuapp.com/updateStatus/${id}`)
             .then(res => res.json())
             .then(data => setStatus(data))
     }, [id]);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://radiant-savannah-23694.herokuapp.com/updateStatus/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -11,7 +11,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://radiant-savannah-23694.herokuapp.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -19,7 +19,7 @@ const Purchase = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.status = 'pending'
-        fetch('http://localhost:5000/orders', {
+        fetch('https://radiant-savannah-23694.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

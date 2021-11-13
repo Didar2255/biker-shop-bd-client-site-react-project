@@ -6,7 +6,7 @@ const SingleOrder = ({ order }) => {
     const handelDeleteOrder = (id) => {
         const proceed = window.confirm('Are you sure to delete the order ')
         if (proceed) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://radiant-savannah-23694.herokuapp.com/deleteOrder/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
