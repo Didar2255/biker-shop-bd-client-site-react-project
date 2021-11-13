@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 import SingleOrder from '../SingleOrder/SingleOrder';
+import './MyOrder.css'
 
 const MyOrder = () => {
     const [orders, setOrders] = useState([])
@@ -13,8 +14,8 @@ const MyOrder = () => {
             .then(data => setOrders(data))
     }, [user])
     return (
-        <div className='my-4'>
-            <h2>This is my Order</h2>
+        <div className='my-4 order-product'>
+            <h2>Ordered Product </h2>
             <Container>
                 <Row xs={1} md={3} className="g-4">
                     {

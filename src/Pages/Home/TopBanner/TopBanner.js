@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import pic1 from '../../../Images/Banner/pic1.png'
-import pic2 from '../../../Images/Banner/pic2.png'
-import pic3 from '../../../Images/Banner/pic3.png'
+import pic1 from '../../../Images/Banner/banner_1.jpg'
+import pic2 from '../../../Images/Banner/banner_2.jpg'
+import pic3 from '../../../Images/Banner/banner_3.jpg'
 
 const TopBanner = () => {
     return (
@@ -14,8 +14,8 @@ const TopBanner = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h1>Yamaha XSR900</h1>
+                    <p>Straight Out of The 80s</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -24,15 +24,11 @@ const TopBanner = () => {
                     src={pic2}
                     alt="Second slide"
                 />
-                <div className="d-flex justify-content-between">
-                    <div></div>
-                    <div>
-                        <Carousel.Caption>
-                            <h1>Second slide label</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </div>
-                </div>
+                <Carousel.Caption>
+                    <h1>2021 Ducati Monster</h1>
+                    <p>Exciting and Fits The Monster tag Well</p>
+                </Carousel.Caption>
+
             </Carousel.Item>
             <Carousel.Item>
                 <img
@@ -42,8 +38,8 @@ const TopBanner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h1>Bajaj Pulsar F250 and N250</h1>
+                    <p>Can The 250s Recreate The Pulsar Magic ?  </p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

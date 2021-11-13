@@ -1,0 +1,11 @@
+.star-icon{
+    color: rgb(247, 156, 37);
+    font-size: 20px;
+}
+.review-card-body{
+    min-height: 300px;
+    text-align: left;
+}
+.review-card-body:hover{
+    background-color: rgba(226, 198, 212, 0.796);
+}

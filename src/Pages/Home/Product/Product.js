@@ -8,14 +8,14 @@ const Product = ({ product }) => {
     const url = `/product/${_id}`
     return (
         <Col>
-            <Card className='product-card'>
+            <Card className='product-card shadow'>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <Card.Title>{productName}</Card.Title>
                     <Card.Text>
-                        {description}
+                        {description.slice(0, 150)}
                     </Card.Text>
-                    <Link to={url}><Button variant='primary'>Buy now</Button></Link>
+                    <Link to={url}><Button className='buy-btn'>Buy now</Button></Link>
                 </Card.Body>
             </Card>
         </Col>

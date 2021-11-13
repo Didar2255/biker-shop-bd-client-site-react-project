@@ -1,0 +1,12 @@
+.review{
+    margin: 30px;
+}
+.review h2{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    margin: 30px;
+}
+.review h2:hover{
+    color: tomato;
+}

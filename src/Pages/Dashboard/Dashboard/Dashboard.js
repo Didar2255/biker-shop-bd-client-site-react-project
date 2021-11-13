@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../../PrivetRoute/AdminRoute/AdminRoute';
-import PrivetRoute from '../../../PrivetRoute/PrivetRoute/PrivetRoute';
 import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -55,6 +54,9 @@ const Dashboard = () => {
                                         <li className='dashboard-menu'> <i class="fas fa-user-plus icon"></i> Make Admin</li>
                                     </Link>
                                 </div>}
+                            <Link to='/home'>
+                                <li className='dashboard-menu'>Home</li>
+                            </Link>
                             <li className='dashboard'><Button variant='danger' className='my-4' onClick={handelLogOut}>Log-Out</Button></li>
                         </div>
 
@@ -62,7 +64,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-9 col-12">
                     <Switch>
-                        <Route path={path}>
+                        <Route exact path={path}>
                             <MyOrder></MyOrder>
                         </Route>
                         <Route path={`${path}/addReviews`}>
