@@ -21,7 +21,7 @@ import './Dashboard.css'
 const Dashboard = () => {
     const { handelLogOut } = useAuth()
     let { path, url } = useRouteMatch();
-    const { admin } = useAuth()
+    const { admin, user } = useAuth()
     return (
         <div className="dashboard-container">
             <div className='row'>
@@ -58,7 +58,7 @@ const Dashboard = () => {
                             <Link to='/home'>
                                 <li className='dashboard-menu'>Home</li>
                             </Link>
-                            <li className='dashboard'><Button variant='danger' className='my-4' onClick={handelLogOut}>Log-Out</Button></li>
+                            {user.email && <li className='dashboard'><Button variant='danger' className='my-4' onClick={handelLogOut}>Log-Out</Button></li>}
                         </div>
 
                     </div>
