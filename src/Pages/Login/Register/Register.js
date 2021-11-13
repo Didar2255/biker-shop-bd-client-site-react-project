@@ -8,6 +8,8 @@ import './Register.css'
 const Register = () => {
     const [registerData, setRegisterData] = useState({})
     const { user, handelCreateAccount, isLoading } = useFirebase()
+    const history = useHistory()
+    const location = useLocation()
     const handelRegisterOnchange = (e) => {
         const field = e.target.name;
         const value = e.target.value;
@@ -16,7 +18,7 @@ const Register = () => {
         setRegisterData(newRegisterData)
     }
     const handelRegisterForm = (e) => {
-        handelCreateAccount(registerData.email, registerData.password, registerData.name)
+        handelCreateAccount(registerData.email, registerData.password, registerData.name, history, location)
         e.preventDefault()
     }
     return (

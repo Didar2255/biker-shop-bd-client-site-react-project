@@ -11,11 +11,14 @@ const useFirebase = () => {
 
     const auth = getAuth()
     const GoogleProvider = new GoogleAuthProvider()
-    const handelCreateAccount = (email, password, name) => {
+    const handelCreateAccount = (email, password, name, history, location) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const newUser = { email, displayName: name }
+                // redirect uri
+                const destination = location.state?.from || '/home'
+                history.replace(destination)
                 setUser(newUser)
                 // save user To the database
                 saveUser(email, name, 'POST')
