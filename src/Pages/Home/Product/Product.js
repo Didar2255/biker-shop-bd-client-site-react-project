@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Product.css'
 
 const Product = ({ product }) => {
-    const { productName, image, description, _id } = product
+    const { productName, image, description, _id, price } = product
     const url = `/product/${_id}`
     return (
         <Col>
@@ -14,6 +14,7 @@ const Product = ({ product }) => {
                     <Card.Title>{productName}</Card.Title>
                     <Card.Text>
                         {description.slice(0, 150)}
+                        <h5 className='my-2'>Price : ${price}</h5>
                     </Card.Text>
                     <Link to={url}><Button className='buy-btn'>Buy now</Button></Link>
                 </Card.Body>

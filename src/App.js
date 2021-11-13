@@ -31,9 +31,9 @@ function App() {
             <PrivetRoute path='/product/:id'>
               <Purchase></Purchase>
             </PrivetRoute>
-            <PrivetRoute path='/updateStatus/:id'>
+            <Route path='/updateStatus/:id'>
               <StatusUpdate></StatusUpdate>
-            </PrivetRoute>
+            </Route>
             <Route path='/dashboard'>
               <Dashboard></Dashboard>
             </Route>

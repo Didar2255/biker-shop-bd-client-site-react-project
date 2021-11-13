@@ -64,7 +64,7 @@ const Login = () => {
                                 <p>New user ? <Link to='/register'>Register Here</Link></p>
                                 _________________ or ________________
                                 <br />
-                                <button className="login-btn " onClick={googleLogIn}> Sign With Google</button>
+                                <button className="login-btn " onClick={googleLogIn}> <i class="fab fa-google"></i> Sign With Google</button>
                             </div>
                         </div>
                     </div>

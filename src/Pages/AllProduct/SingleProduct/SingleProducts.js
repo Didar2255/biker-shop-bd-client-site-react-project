@@ -8,7 +8,7 @@ const SingleProducts = (props) => {
     return (
         <div>
             <Col>
-                <Card style={{ textAlign: 'justify', lineHeight: '24px' }}>
+                <Card style={{ textAlign: 'justify', lineHeight: '24px' }} className='shadow'>
                     <Card.Img variant="top" src={image} />
                     <Card.Body>
                         <Card.Title>{productName}</Card.Title>
