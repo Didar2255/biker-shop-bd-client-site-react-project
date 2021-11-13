@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 
-const SingleOrder = ({ order }) => {
+const SingleOrder = ({ order, setDelete }) => {
     const { productName, productImg, productPrice, _id, status, productColor } = order;
     const handelDeleteOrder = (id) => {
         const proceed = window.confirm('Are you sure to delete the order ')
@@ -13,6 +13,10 @@ const SingleOrder = ({ order }) => {
                 .then(data => {
                     if (data.deletedCount) {
                         alert('Delete Success full ?')
+                        setDelete(true)
+                    }
+                    else {
+                        setDelete(false)
                     }
                 })
         }

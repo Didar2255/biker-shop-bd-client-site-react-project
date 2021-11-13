@@ -7,12 +7,12 @@ import './MyOrder.css'
 const MyOrder = () => {
     const [orders, setOrders] = useState([])
     const { user } = useAuth()
-
+    const [isDelete, setIsDelete] = useState(null)
     useEffect(() => {
         fetch(`https://radiant-savannah-23694.herokuapp.com/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [user])
+    }, [user, isDelete])
     return (
         <div className='my-4 order-product'>
             <h2>Ordered Product </h2>
@@ -22,6 +22,7 @@ const MyOrder = () => {
                         orders.map(order => <SingleOrder
                             key={order._id}
                             order={order}
+                            setDelete={setIsDelete}
                         ></SingleOrder>)
                     }
                 </Row>
