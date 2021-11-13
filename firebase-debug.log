@@ -1,0 +1,43 @@
+[debug] [2021-11-13T11:58:30.246Z] ----------------------------------------------------------------------
+[debug] [2021-11-13T11:58:30.249Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-13T11:58:30.250Z] CLI Version:   9.21.0
+[debug] [2021-11-13T11:58:30.250Z] Platform:      win32
+[debug] [2021-11-13T11:58:30.250Z] Node Version:  v14.17.1
+[debug] [2021-11-13T11:58:30.255Z] Time:          Sat Nov 13 2021 17:58:30 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-11-13T11:58:30.255Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-13T11:58:30.331Z] Field ".hosting.rewrites" in "firebase.json" is possibly invalid: should be array
+[debug] [2021-11-13T11:58:30.331Z] Field ".hosting" in "firebase.json" is possibly invalid: should be array
+[debug] [2021-11-13T11:58:30.332Z] Field ".hosting" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2021-11-13T11:58:30.337Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-13T11:58:30.338Z] > authorizing via signed-in user (diderbokth2255@gmail.com)
+[debug] [2021-11-13T11:58:30.338Z] [iam] checking project biker-shopbd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-13T11:58:30.341Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-13T11:58:30.341Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-13T11:58:30.693Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 13 Nov 2021 11:58:33 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-13T11:58:30.724Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/biker-shopbd:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-13T11:58:32.179Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 13 Nov 2021 11:58:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1164","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-13T11:58:32.182Z] > refreshing access token with scopes: []
+[debug] [2021-11-13T11:58:32.183Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-13T11:58:32.454Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 13 Nov 2021 11:58:34 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-13T11:58:32.486Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biker-shopbd [none]
+[debug] [2021-11-13T11:58:33.060Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biker-shopbd 200
+[debug] [2021-11-13T11:58:33.061Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biker-shopbd {"projectId":"biker-shopbd","projectNumber":"651511323234","displayName":"biker-shopBD","name":"projects/biker-shopbd","resources":{"hostingSite":"biker-shopbd"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'biker-shopbd'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-11-13T11:58:33.301Z] TypeError: (cfg.rewrites || []).filter is not a function
+    at validateDeploy (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\validate.js:14:64)
+    at C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\prepare.js:28:9
+    at arrayEach (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:530:11)
+    at Function.forEach (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9410:14)
+    at module.exports (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\hosting\prepare.js:26:7)
+    at _chain (C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:23:40)
+    at C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:64:16
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
