@@ -46,8 +46,8 @@ const ManageProduct = () => {
                             <td >{product.productName}</td>
                             <td >{product.image}</td>
                             <td >{product.price}</td>
-                            <td ><i class="fas fa-edit update-icon"></i></td>
-                            <td ><i class="fas fa-trash-alt delete-icon" onClick={() => handelDeleteProduct(product._id)}></i></td>
+                            <td ><i className="fas fa-edit update-icon"></i></td>
+                            <td ><i className="fas fa-trash-alt delete-icon" onClick={() => handelDeleteProduct(product._id)}></i></td>
                         </tr>)
                     }
                 </tbody>
