@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Footer from '../../../Components/Footer/Footer';
 import Header from '../../../Components/Header/Header'
 import SingleProducts from '../SingleProduct/SingleProducts';
 import './AllProduct.css'
@@ -16,8 +17,8 @@ const AllProducts = () => {
         <div>
             <Header></Header>
             <Container>
-                <div className="my-4 product-title">
-                    <h2>New Bikes in Bangladesh</h2>
+                <div className="my-4">
+                    <h2 className='product-title'>New Bikes in Bangladesh</h2>
                     <Row xs={1} md={3} className="g-4">
                         {
                             products.map(product => <SingleProducts
@@ -28,6 +29,7 @@ const AllProducts = () => {
                     </Row>
                 </div>
             </Container>
+            <Footer />
         </div>
     );
 };
