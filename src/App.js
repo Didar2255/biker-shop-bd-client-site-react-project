@@ -14,6 +14,7 @@ import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Purchase/Purchase/Purchase';
 import PrivetRoute from './PrivetRoute/PrivetRoute/PrivetRoute';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <Route path='/about'>
               <About></About>
+            </Route>
+            <Route path='/contact'>
+              <ContactUs></ContactUs>
             </Route>
             <Route path='/login'>
               <Login></Login>

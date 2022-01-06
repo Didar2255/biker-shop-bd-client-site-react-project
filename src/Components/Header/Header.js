@@ -32,7 +32,10 @@ const Header = () => {
                         Dashboard
                     </NavLink>
                     <NavLink to='/about'>
-                        About us
+                        About Us
+                    </NavLink>
+                    <NavLink to='/contact'>
+                        Contact Us
                     </NavLink>
                     {user.email && <span className='display-name'>{user.displayName}</span>}
                     {user?.email ? <Button variant='danger' onClick={handelLogOut}>Log-Out</Button>
