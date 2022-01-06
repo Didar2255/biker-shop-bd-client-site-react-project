@@ -44,7 +44,7 @@ const ContactUs = () => {
                                 <input type="text" className='contact name' placeholder='Your Name *' name='name' />
                                 <input type="text" className='contact email' placeholder='Your Email *' name='email' />
                                 <input type="text" className='contact subject' placeholder='Write a Subject *' name='subject' />
-                                <textarea name="message" id="message" placeholder='Write your massage' name='message'></textarea>
+                                <textarea name="message" id="message" placeholder='Write your massage'></textarea>
                                 <button className='contact-btn' type='submit'>Submit</button>
                             </form>
                         </div>
