@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './Product.css'
 
@@ -9,14 +10,14 @@ const Product = ({ product }) => {
     return (
         <Col>
             <Card className='product-card shadow'>
-                <Card.Img variant="top" src={image} />
+                <Card.Img className='product-img' variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>{productName}</Card.Title>
+                    <h4 className='product-name'>{productName}</h4>
                     <Card.Text>
                         {description.slice(0, 150)}
                         <h5 className='my-2'>Price : ${price}</h5>
                     </Card.Text>
-                    <Link to={url}><Button className='buy-btn'>Buy now</Button></Link>
+                    <Link to={url}> <button className='order-btn'><AiOutlineShoppingCart /> Buy now</button></Link>
                 </Card.Body>
             </Card>
         </Col>

@@ -7,8 +7,8 @@ import './Blog.css'
 const Blog = () => {
     return (
         <div className='my-5 blog'>
-            <h1>From Our Blog</h1>
-            <p>Latest news and event of our bike</p>
+            <h1 className='product-title'>From Our Blog</h1>
+            <h5 className='blog-des'>Latest news and event of our bike</h5>
             <div className="row">
                 <div className="col-md-3 col-12 blog-img">
                     <img src={blogImg1} alt="" className='img-fluid' />

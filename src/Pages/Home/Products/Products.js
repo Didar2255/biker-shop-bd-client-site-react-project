@@ -12,8 +12,8 @@ const Products = () => {
     }, [])
     return (
         <div className='my-5 display-product'>
-            <h2>Recommended for You</h2>
             <Container>
+                <h2 className='product-title'>Recommended for You</h2>
                 <Row xs={1} md={3} className="g-4">
                     {
                         displayProducts.slice(0, 6).map(product => <Product

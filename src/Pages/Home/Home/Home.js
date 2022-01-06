@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../../../Components/Footer/Footer';
 import Header from '../../../Components/Header/Header';
 import Blog from '../Blog/Blog';
+import CustomerQuestion from '../CustomerQuestion/CustomerQuestion';
 import Products from '../Products/Products';
 import Reviews from '../Reviews/Reviews/Reviews';
 import TopBanner from '../TopBanner/TopBanner';
@@ -13,6 +14,7 @@ const Home = () => {
             <TopBanner></TopBanner>
             <Products></Products>
             <Blog></Blog>
+            <CustomerQuestion></CustomerQuestion>
             <Reviews></Reviews>
             <Footer></Footer>
         </div>

@@ -1,0 +1,14 @@
+.question{
+    font-weight: 600;
+}
+.question-section{
+    background-color: #FEF5E7 ;
+    padding: 20px;
+}
+.question-title{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.indian-royel img{
+    border-radius: 5px;
+}
